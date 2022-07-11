@@ -1,4 +1,4 @@
-0.4: New note<br>
+<strong>0.4: New note</strong><br>
 ![alt text](https://github.com/HichamAf/fullstack/blob/main/part0/0.4.png "0.4: New note")
 
 
