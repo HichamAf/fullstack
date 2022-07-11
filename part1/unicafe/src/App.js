@@ -6,30 +6,30 @@ const Statistics = (props) => {
   <div>
     <h1>statistics</h1>
     <table>
-		<tr>
-		  <td>good</td>
-		  <td>{props.good}</td>
-		</tr>
-		<tr>
-		  <td>neutral</td>
-		  <td>{props.neutral}</td>
-		</tr>
-		<tr>
-		  <td>bad</td>
-		  <td>{props.bad}</td>
-		</tr>
-		<tr>
-		  <td>all</td>
-		  <td>{props.all}</td>
-		</tr>
-		<tr>
-		  <td>average</td>
-		  <td>{props.average}</td>
-		</tr>
-		<tr>
-		  <td>positive</td>
-		  <td>{props.positive} %</td>
-		</tr>
+	<tr>
+	  <td>good</td>
+	  <td>{props.good}</td>
+	</tr>
+	<tr>
+	  <td>neutral</td>
+	  <td>{props.neutral}</td>
+	</tr>
+	<tr>
+	  <td>bad</td>
+	  <td>{props.bad}</td>
+	</tr>
+	<tr>
+	  <td>all</td>
+	  <td>{props.all}</td>
+	</tr>
+	<tr>
+	  <td>average</td>
+	  <td>{props.average}</td>
+	</tr>
+	<tr>
+	  <td>positive</td>
+	  <td>{props.positive} %</td>
+	</tr>
     </table>
   </div>
   )
@@ -55,9 +55,9 @@ const App = () => {
       <button onClick={() => setGood(good + 1)}>good</button>
       <button onClick={() => setNeutral(neutral + 1)}>neutral</button>
       <button onClick={() => setBad(bad + 1)}>bad</button><br/>
-		<div>
-		  <Statistics good={good} neutral={neutral} bad={bad} all={all} average={average} positive={positive}/>
-		</div>
+	<div>
+	  <Statistics good={good} neutral={neutral} bad={bad} all={all} average={average} positive={positive}/>
+	</div>
     </div>
   )
 }
