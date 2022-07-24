@@ -1,8 +1,5 @@
 import { useState } from 'react'
 
-//Expand the following application by adding a button that can be clicked to display a random anecdote 
-//from the field of software engineering:
-
 const App = () => {
   const anecdotes = [
     'If it hurts, do it more often.',
@@ -13,20 +10,40 @@ const App = () => {
     'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.',
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.'
   ]
-   
+  
   const [selected, setSelected] = useState(0)
-
-  const [nextAnecdote, setGood] = useState(0)
-
-  const handleClick = () => {
-    console.log('clicked')
+  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0));
+  
+  const handleAnecdotes = () => {
+    // Generate a random number from 0 to the length of the array
+    setSelected(Math.floor(Math.random() * anecdotes.length))
   }
+
+  const handleVotes = () => {
+    // Copy of the last state of votes
+    const copy = [...votes];
+    // increment the vote (index's value) by one
+    copy[selected] += 1;
+    // Update votes
+    setVotes(copy);
+  };
+
+  const max = Math.max(...votes);
+  const i = votes.indexOf(max);
 
   return (
     <div>
-      
+      <h1>Anecdote of the day</h1>
       {anecdotes[selected]}<br/>
-      <button>next anecdote</button>
+
+      has {votes[selected]} votes<br/>
+      
+      <button onClick={handleVotes}>vote</button>
+      <button onClick={handleAnecdotes}>next anecdote</button>
+
+      <h1>Anecdote with most votes</h1>
+      {anecdotes[i]}<br/>
+      has {votes[i]} votes<br/>
     </div>
   )
 }
